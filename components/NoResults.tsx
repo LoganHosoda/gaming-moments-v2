@@ -1,10 +1,6 @@
-import React, { useState, useEffect, useRef} from 'react';
-import { NextPage } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
-import { BsPlay, BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
-import { GoVerified } from 'react-icons/go';
+import React from 'react';
+import { MdOutlineVideocamOff } from 'react-icons/md';
+import { BiCommentX } from 'react-icons/bi';
 
 interface IProps {
   text: string;
@@ -12,7 +8,15 @@ interface IProps {
 
 const NoResults = ({ text }: IProps) => {
   return (
-    <div>NoResults</div>
+    <div className="flex flex-col justify-center items-center h-full w-full">
+      <p className="text-8xl">
+        {text === 'No comments yet' 
+        ? <BiCommentX />
+        : <MdOutlineVideocamOff />
+        }
+      </p>
+      <p className="text-2xl text-center">{text}</p> 
+    </div>
   )
 };
 

@@ -8,7 +8,7 @@ import { SanityAssetDocument } from '@sanity/client';
 import useAuthStore from '../store/authStore';
 import { client } from '../utils/client';
 import { topics } from '../utils/constants';
-import userAuthStore from '../store/authStore';
+import { BASE_URL } from '../utils';
 
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +17,7 @@ const Upload = () => {
   const [caption, setCaption] = useState('');
   const [category, setCategory] = useState(topics[0].name);
   const [savingPost, setSavingPost] = useState(false);
-  const { userProfile }: { userProfile: any } = userAuthStore();
+  const { userProfile }: { userProfile: any } = useAuthStore();
   const router = useRouter();
 
   const uploadVideo = async (e: any) => {
@@ -61,7 +61,7 @@ const Upload = () => {
         topic: category,
       }
 
-      await axios.post('http://localhost:3000/api/post', document);
+      await axios.post(`${BASE_URL}/api/post`, document);
 
       router.push('/');
     } else {
@@ -70,8 +70,8 @@ const Upload = () => {
   }
 
   return (
-    <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center">
-      <div className="bg-white rounded-lg xl:h-[80vh] w-[60%] flex gap-6 flex-wrap justify-between items-center p-14 pt-6">
+    <div className="flex w-full h-full absolute left-0 top-[60px] pt-10 lg:pt-20 bg-[#F8F8F8] justify-center">
+      <div className="bg-white rounded-lg xl:h-[80vh] md:w-[60%] sm:w-[100%] flex gap-6 flex-wrap justify-between items-center p-14 pt-6">
         <div>
           <div>
             <p className="text-2xl font-bold">Upload Video</p>
