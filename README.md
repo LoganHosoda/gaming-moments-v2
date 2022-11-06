@@ -4,23 +4,23 @@ Gaming Moments v2.0 is a fullstack social media application rebuilt from the gro
 
 ## Features
 
-> Upload videos
-> Like/comment on videos
-> Account creation via. Google OAuth 2.0
-> User profiles, featuring what the user has uploaded, and what they have liked
-> Suggested user accounts
-> Search for users/videos
-> Sort videos by category
-> More to come!
+- Upload videos
+- Like/comment on videos
+- Account creation via. Google OAuth 2.0
+- User profiles, featuring what the user has uploaded, and what they have liked
+- Suggested user accounts
+- Search for users/videos
+- Sort videos by category
+- More to come!
 
 ## Tech used
 
-> HTML
-> CSS
-> Tailwind CSS
-> JavaScript
-> React.js
-> TypeScript.js
-> Next.js
-> Zustand
-> Sanity.io
+- HTML
+- CSS
+- Tailwind CSS
+- JavaScript
+- React.js
+- TypeScript.js
+- Next.js
+- Zustand
+- Sanity.io
